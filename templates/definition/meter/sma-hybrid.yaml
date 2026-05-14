@@ -159,7 +159,7 @@ render: |
           address: 30967 # SMA Modbus Profile: DcMs.Watt [2]
           type: holding
           decode: int32nan
-  {{- if eq .disableEnergy }}
+  {{- if not .disableEnergy }}
   energy:
     source: modbus
     {{- include "modbus" . | indent 2 }}
