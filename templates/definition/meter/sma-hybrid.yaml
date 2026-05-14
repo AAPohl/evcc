@@ -31,7 +31,13 @@ params:
     advanced: true
     usages: ["battery"]
   - name: chargepower
-    deprecated: true
+    deprecated: true  
+  - name: disableEnergy
+    type: bool
+    default: false
+    description:
+      de: Für Wechselrichter ohne Energiewerte via Modbus
+      en: For inverters without energy values via Modbus
 render: |
   type: custom
   {{- if eq .usage "grid" }}
